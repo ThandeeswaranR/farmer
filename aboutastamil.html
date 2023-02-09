@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aruvadai Sei </title>
+    <link rel="icon" href="image/headicon.svg" type="image/icon type">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        *{
+            list-style: none;
+            text-decoration: none;
+        }
+        @font-face {
+            font-family: 'jostNormal';
+            src: url(fonts/Jost-Regular.ttf);
+        }
+        @font-face {
+            font-family: 'jostbold';
+            src: url(fonts/Jost-Medium.ttf);
+        }
+        .navbar-brand{
+    height: 70px;
+    width: 150px;
+}
+
+.nav-item a{
+    font-family: 'jostbold';
+font-weight: 500;
+font-size: 16px !important;
+line-height: 20px;
+color: rgba(58,107,53,0.9);
+align-items: center;
+text-align: center;
+letter-spacing: 0.1px;
+}
+.nav-item a:hover{
+    color: rgb(45, 225, 25);
+}
+.navbar{
+  background: #e6ffe4 !important;
+  position: fixed !important;
+}
+main{
+  margin-top: 9%;
+}
+.search-control{
+Width:328px;
+height:37px;
+background: #FFFFFF;
+border-radius: 28px;
+}
+#search-icon1{
+   width: 15px;
+   height: 15px; 
+   margin-top: 12px !important; 
+}
+#search-icon2{
+   width: 15px;
+   height: 15px;  
+   margin-top: 12px !important; 
+}
+#search-in{
+    background: white;
+    width: 250px;
+    border: 0px;
+}
+#search-in:hover{
+    border: 0px;
+}
+.lang-container{
+padding: 6px 8px 6px 16px;
+gap: 8px;
+width: 168px;
+height: 32px;
+background: white;
+border:  1px darkred;
+border-radius: 5px;
+box-shadow: 0px 2px 2px 2px #88888878;
+margin-left: 20px;
+}
+.nav-item{
+color: #3A6B35;
+padding:0px 0px 0px 15px;
+}
+footer{
+    background-color: #3A6B35;
+    margin-top: 50px;
+}
+.footer-content{
+    color: #E3B448;
+    font-family: 'jostNormal';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 29px;
+}
+#footer-link{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'jostNormal';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 29px;
+text-transform: uppercase;
+}
+
+@media(570px <= width <= 660px){
+  .lang-container{
+    margin-left: 0px;
+  }
+}
+ @media (max-width:1400px) and (min-width:1193px){
+  .search-control{
+Width:250px;
+height:37px;
+}
+#search-in{
+    width: 160px;
+}
+.nav-item{
+    padding:0px 0px 0px 30px;
+}
+ }
+ .headingone{
+  color: #0b6c00;
+  line-height: 34px;
+   font-weight: 500;
+   display: inline-block;
+   font-family: 'jostNormal';
+}
+
+@media ( width <= 1210px){
+    .breakt{
+      display: none;
+    }
+ }
+ .aboutus{ 
+  background-image: url(image/about\ us\ img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 55px;
+  margin-top: 4s%;
+}
+.headabout{
+  font-weight: 600;
+  font-size: 72px;
+  color: #FEFEFE;
+  text-align: center;
+  padding-top: 156px;
+}
+
+.weathericon{
+  width: 60px !important;
+ }
+ #popup{
+  position: fixed;
+  width: 300px;
+  height: 500px;
+background: linear-gradient(180deg, rgba(58, 107, 53, 0.88) 0%, rgba(227, 180, 72, 0.86) 100%);
+border-radius: 33px;
+  bottom:-40%;
+  right: 0;
+  transform: translate(-50%,-50%);
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transform: 0.5s;
+  color: #FFFFFF;
+  visibility: hidden;
+ }
+ .content{
+  position: relative;
+  width: 100%;
+  
+ }
+ #popup.active{
+  visibility: visible;
+  bottom:-25%;
+  right:-6%;
+ }
+ .weatherloc{
+  font-family: 'jostNormal';
+font-style: normal;
+font-weight: 500;
+font-size: 19px;
+line-height: 20px;
+letter-spacing: 0.1px;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ }
+ .weatherdate{
+  
+font-family: 'jostNormal';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 13px;
+letter-spacing: 0.1px;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ }
+ .monday{
+  font-family: 'jostNormal';
+font-weight: 300;
+font-size: 24px;
+line-height: 20px;
+letter-spacing: 0.1px;
+text-transform: uppercase;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ }
+ .mondaycurent{
+  font-family: 'jostNormal';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 20px;
+letter-spacing: 0.1px;
+text-transform: uppercase;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ }
+ .mondaycurent1{
+  font-family: 'jostNormal';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    padding-top: 5px;
+ }
+ .date{
+  font-family: 'jostNormal';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+ }
+ .date-bg img{
+  width: 54px;
+ }
+ .date-bg{
+  background: #597E52;
+  border-radius: 10px;
+  padding: 0px 20px !important;
+ }
+ #close{
+  position: absolute;
+  right: 0;
+ }
+ #weathericon{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+ }
+ @media(width <= 700px){
+  #popup.active {
+    visibility: visible;
+    bottom: -25%;
+    right: -22%;
+}
+ }
+    </style>
+</head>
+<body>
+   <header>
+    <nav class="navbar navbar-expand-xl fixed-top  position-relative bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img  src="image/logo.svg" height="67px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link text-start text-lg-center " aria-current="page" href="index.html">முகப்பு</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-start text-lg-center" href="products.html">கார்ட்</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-start text-lg-center" href="aboutus.html">எங்களை பற்றி</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-start text-lg-center" href="contactustamil.html">தொடர்பு கொள்ள</a>
+            </li>
+          </ul>
+          <div class="d-sm-flex  justify-content-revert">
+              <div class="search-control d-flex m-lg-auto mx-4">
+                   <img src="image/keyboard_voice.svg" class=" m-3 " id="search-icon1" alt="#">
+                   <input  type="search"  id="search-in"  placeholder="Search" aria-label="Search">
+                   <img src="image/icon.svg" id="search-icon2" class=" m-3  text-end" alt="#">
+              </div>
+              <ul class="lang-container mt-3 mt-sm-0 mt-lg-2 ">
+              <li class="nav-item p-0 dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                  style="font-size: 16px !important;">
+                  மொழி
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="aboutus.html">ENGLISH</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+    </header>
+    <!-- header section end -->
+     <!-- weather icon -->
+     <a id="weathericon" href="#" onclick="popupToggle();";><img src="image/Group 58.svg" alt="" width="75px"></a>
+     <div id="popup">
+        <div class="content">
+         <a id="close" href="#" onclick="popupToggle();";><img src="image/close.svg"id="close" alt=""></a>
+         <h2 class="weathercontent text-center">Weather</h2>
+         <div  style="background: #50704A; border-radius: 10px;">
+           <div class="d-flex justify-content-between px-3" style="background: #597E52;">
+              <img src="image/weather1.svg" alt="">
+              <h1 class="weatherloc pt-3">Chennai</h1>
+              <p class="weatherdate pt-3">10JAN2023</p>
+           </div>
+           <div class="d-flex justify-content-between p-3" style="    padding: 12px 10px 0px 10px;">
+             <div class="text-center">
+                <h3 class="monday">Monday</h3>
+                <h4 class="monday" style="font-size:16px ;">Humdity 20%</h4>
+                <h6 class="monday" style="font-size:16px ;">23° - 27°</h6>
+                <h3 class="mondaycurent">23°</h3>
+             </div>
+             <div class="text-center">
+                <img src="image/weather2.svg" width= '63px'alt="">
+                <h5 class="clear">CLEAR</h5>
+             </div>
+           </div>
+           <div class="d-flex justify-content-between px-3 py-2 date-bg">
+              <h2 class="date pt-2 ">tuesday</h2>
+              <div class="d-flex justify-content-between">
+               <img src="image/weather3.svg" class="px-3" alt="">
+               <h3 class="mondaycurent1">23°</h3>
+              </div>
+           </div>
+           <div class="d-flex justify-content-between px-3 py-2 date-bg">
+             <h2 class="date pt-2 ">wednesday</h2>
+             <div class="d-flex justify-content-between">
+              <img src="image/weather3.svg" class="px-3" alt="">
+              <h3 class="mondaycurent1">23°</h3>
+             </div>
+          </div>
+          <div class="d-flex justify-content-between px-3 py-2 date-bg">
+           <h2 class="date pt-2 ">Thursday</h2>
+           <div class="d-flex justify-content-between">
+            <img src="image/weather3.svg" class="px-3" alt="">
+            <h3 class="mondaycurent1">23°</h3>
+           </div>
+        </div>
+        <div class="d-flex justify-content-between px-3 py-2 date-bg">
+         <h2 class="date pt-2 ">Friday</h2>
+         <div class="d-flex justify-content-between">
+          <img src="image/weather3.svg" class="px-3" alt="">
+          <h3 class="mondaycurent1">23°</h3>
+         </div>
+      </div>
+      <div class="d-flex justify-content-between px-3 py-2 date-bg">
+       <h2 class="date pt-2 ">saturday</h2>
+       <div class="d-flex justify-content-between">
+        <img src="image/weather3.svg" class="px-3" alt="">
+        <h3 class="mondaycurent1">23°</h3>
+       </div>
+    </div>
+    <div class="d-flex justify-content-between px-3 py-2 date-bg">
+     <h2 class="date pt-2 ">Sunday</h2>
+     <div class="d-flex justify-content-between">
+      <img src="image/weather3.svg" class="px-3" alt="">
+      <h3 class="mondaycurent1">23°</h3>
+     </div>
+  </div>
+         </div>
+        </div>
+     </div>
+ 
+     <!-- weather icon end -->
+    <div class="aboutus">
+      <h1 class="headabout">எங்களை பற்றி</h1>
+    </div>
+    <div class="container">
+      <div class="text-center">
+        <div>
+      <p class="headingone text-start px-3 px-md-5">அறுவடை செய் என்பது இணையதளப் பயன்பாடு. நன்மைகளில் குறைந்த பசுமை இல்ல வாயு<br class="breakt"> உமிழ்வு, குறைந்தபட்ச போக்குவரத்துத் தேவைகள் மற்றும் உணவு உற்பத்திக்கான குறைக்கப்பட்ட<br class="breakt"> ஆற்றல் பயன்பாடு ஆகியவை அடங்கும். நன்மைகள் மிகவும் பரவலாக ஒப்புக் கொள்ளப்பட்டதால்,<br class="breakt"> நகர்ப்புற விவசாயத்தின் போக்கு மிகவும் பிரபலமாகத் தொடங்குகிறது.
+
+      </p>
+      <p class="headingone text-start px-3 px-md-5">விவசாயிகள் தங்கள் இலக்குகள் மற்றும் விருப்பங்களை அடைய ஒரு நல்ல தளத்தை அமைப்பதற்கான<br class="breakt"> ஒரு முழுமையான தீர்வாகும், அங்கு அவர்கள் பயிர் விவரங்கள், விவசாய பொருட்கள் போன்ற<br class="breakt"> சேவைகளை வழங்குவதன் மூலம் அவர்களின் தேவைகள் மற்றும் விருப்பங்களின் அடிப்படையில்<br class="breakt"> தங்கள் பயிர்களை பயிரிடுவதற்கான தீர்வைப் பெறலாம். உபகரணங்கள் வாடகைக்கு.
+
+
+      </p>
+      <p class="headingone text-start px-3 px-md-5">இந்த இணையதளம் விவசாயப் பொருட்களை நேரடி வாடிக்கையாளர்களுடன் இணைக்க உதவும். <br class="breakt">அடிப்படை விவசாயத்துடன் தொடங்க விரும்புபவர்கள் விவசாயத்தைப் பற்றியும் அறிந்து கொள்ளலாம்.</p>
+    </div>
+    </div>
+    </div>
+
+    <!-- footer start -->
+    <footer>
+
+    <p class="text-center p-5">
+       <span class="footer-content" >© பதிப்புரிமை  </span> <a id="footer-link" href="https://schooloftechies.com/">  ஸ்கூல் ஆப் டெக்கீஸ்.</a> <span class="footer-content">அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை</span>
+    </p>
+    </footer>
+    <script>
+      function popupToggle(){
+        const popup = document.getElementById('popup');
+        popup.classList.toggle('active');
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
